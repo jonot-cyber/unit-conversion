@@ -1,0 +1,7 @@
+1 meter = 100 centimeters
+1 hour = 60 minutes
+1 minute = 60 seconds
+1 second = 1000 milliseconds
+1 year = 365 days
+1 day = 24 hours
+
