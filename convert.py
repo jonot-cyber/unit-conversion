@@ -1,4 +1,21 @@
-conversions = [[{"unit":"year","value":1},{"unit":"day","value":365}],[{"unit":"day","value":1},{"unit":"hour","value":24}]]
+conversions = []
+
+def get_data():
+    table = open("table.txt","r").read()
+    table_lines = table.split('\n')
+    for line in table_lines:
+        chunks = line.split(' ')
+        #number unit = number unit
+        first_number = int(chunks[0])
+        first_unit = chunks[1]
+        if first_unit[len(first_unit)-1] == "s":
+            first_unit = first_unit[:len(first_unit)-1]
+        second_number = int(chunks[3])
+        second_unit = chunks[4]
+        if second_unit[len(second_unit)-1] == "s":
+            second_unit = second_unit[:len(second_unit)-1]
+        conversions.append([{"unit":first_unit,"value":first_number},{"unit":second_unit,"value":second_number}])
+get_data()
 
 def convert(unit,value,to):
     global conversions
